@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<link rel="stylesheet" href="public/index.css">
+</head>
+<body>
+  <nav class="center-hrizontal">
+  <% if !current_user.nil? %>
+	  <a href="/">MUSIC SNS!!!</a>
+		<a href="/home"><img src="<%= current_user.profile_url %>" alt="user_image" width="40" height="40"></a>
+		<a href="/search">search</a>
+		<a href="/sign_out">logout</a>
+  <% else %>
+    <a href="/">MUSIC SNS!!!</a>
+    <a href="/sign_up">新規登録</a>
+  <% end %>
+	</nav>
+  <%= yield %>
+</body>
+</html>

@@ -1,0 +1,7 @@
+<div class="center-vertical">
+<h1>コメントの更新</h1>
+<form action="/update/<%= @music.id %>" method="POST">
+  <input type="text" name="comment" value="<%= @music.comment %>">
+  <input type="submit" value="更新">
+</form>
+</div>

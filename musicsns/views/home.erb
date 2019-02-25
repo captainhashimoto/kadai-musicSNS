@@ -1,0 +1,14 @@
+<section class="center-vertical">
+	<h1><%= @user.user_name %>の投稿</h1>
+  <%= @musics.each.do |music| %>
+    <div class="post center-vertical">
+      <img src="<%= music.image_url %>">
+      <p><%= music.artist %></p>
+      <p><%= music.album %></p>
+      <p><%= music.track %></p>
+      <a href="<%= music.sample_url %>">サンプル</a>
+      <p>コメント：<%= music.comment %></p>
+      <a href="/delete/<%= music.id %>">削除</a>
+      <a href="/edit/<%= music.id %>">編集</a>
+		</div>
+</section>

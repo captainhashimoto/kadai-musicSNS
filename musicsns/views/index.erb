@@ -1,0 +1,23 @@
+	<div class="first-view center-vertical">
+	  <h1>MUSIC SNS!!!</h1>
+		<% if current_user.nil? %>
+		<form action="/sign_in" method="POST" class="form-inline">
+		  <input type="text" name="name" placeholder="ユーザー名">
+			<input type="password" name="password" placeholder="パスワード">
+			<input type="submit" value="ログイン">
+		</form>
+		<% end %>
+	</div>
+	<div class="center-vertical">
+	  <h1>最新の投稿</h1>
+		<% if !@musics.nil? %>
+		<% @musics.each do |music| %>
+		<div class="post center-vertical">
+				<img src="<%= music.image_url %>">
+				<p>artist:<%= music.artist %></p>
+        <p>コメント:<%= music.comment %></p>
+        <p>投稿者:<%= music.user_name %></p>
+		</div>
+		<% end %>
+		<% end %>
+	</div>
